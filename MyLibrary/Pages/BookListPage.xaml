@@ -15,10 +15,21 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <Label>Фильтрация по категории</Label>
-            <ComboBox Name="FiltrComboBox" SelectionChanged="FiltrComboBox_SelectionChanged" ItemsSource="{Binding CategoryList}"/>
+            <Label>Фильтрация по категори   и</Label>
+            <ComboBox Name="FiltrComboBox" ItemsSource="{Binding CategoryList}"/>
             <RadioButton Click="SortBook_OnClick" GroupName="SortBook" Name="auth" Content="Сортировка по автору"></RadioButton>
             <RadioButton Click="SortBook_OnClick" GroupName="SortBook" Name="tit" Content="Сортировка по названию книги"></RadioButton>
         </StackPanel>
+
+        <DataGrid Name="BookGrid" Grid.Row="1" SelectionMode="Single" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Автор" Binding="{Binding AuthorId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Заголовок" Binding="{Binding Title}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Категория" Binding="{Binding CategoryId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Описание" Binding="{Binding Description}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Полный текст" Binding="{Binding Fulltext}"></DataGridTextColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </Page>

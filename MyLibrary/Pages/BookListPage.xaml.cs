@@ -23,6 +23,12 @@ namespace MyLibrary.Pages
         public BookListPage()
         {
             InitializeComponent();
+            BookGrid.ItemsSource = DB.Connection.Books.ToList();
+        }
+
+        private void SortBook_OnClick(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
